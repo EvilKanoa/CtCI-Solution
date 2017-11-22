@@ -98,7 +98,7 @@ fun <T> linkedListOf(vararg elements: T) = elements.toLinkedList()
 
 fun <T> emptyLinkedList() = LinkedList<T>()
 
-fun <T> Array<T>.toLinkedList() = LinkedList<T>().apply {
+fun <T> Array<out T>.toLinkedList() = LinkedList<T>().apply {
     this@toLinkedList.forEach(this::add)
 }
 
