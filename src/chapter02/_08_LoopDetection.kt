@@ -5,6 +5,15 @@ import chapter02.linkedlist.Node
 import chapter02.linkedlist.linkedListOf
 
 fun <T> loopDetection(list: LinkedList<T>): Node<T>? {
+    val set = HashSet<Node<T>>()
+    var node = list.head
+
+    while (node != null) {
+        if (set.contains(node)) return node
+        else set.add(node)
+        node = node.next
+    }
+
     return null
 }
 
